@@ -1,16 +1,38 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}
      My Blog 
 {% endblock title %} 
 
+{% block css_files %}
+	<link rel="stylesheet" href="{% static "blog/post.css" %}" />
+	<link rel="stylesheet" href="{% static "blog/index.css" %}" />
+{% endblock %}
+
 {% block content %}
-	<header>
-		<h1><a href="">Randy's Blog</a></h1>
-		<nav id="main-navigation">
-			<a href="">All Posts</a>
-		</nav>
-	</header>
+	
 		<section id="welcome">
+		<header>
+			<img src="{% static "blog/images/RandyGuitar.jpg" %}" alt="Randy - Author of Blog">
+			<h2> RANDY'S Blog </h2>
+		</header>
+		<p> Hi, I'm Randy. My loves' are playing baseball, playing guitar  and coding software</p>
 		</section>
-	<h1>Welcome to my blog</h1>
+		
+		<section id="latest-posts">
+			<h2> My Latest Posts </h2>
+			
+			<ul>
+				{% for post in posts %}
+				{% include "blog/includes/post.html" %}
+				{% endfor %}
+			</ul>
+		</section>
+		
+		<section id="about">
+			<h2> What I love to Do</h2>
+			<p> I love the coding aspect of Software Engineering and playing baseball, primarily cathcher as well as figuring out complicated guitar solos!</p>
+			<p> My goal is to get gainfully re-employed with the sky being the limit!</p>
+		</section>
+	
 {% endblock %}

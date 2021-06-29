@@ -1,0 +1,39 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %}
+	This is a Post Title 
+{% endblock title %} 
+{% block css_files %} 
+	<link rel="stylesheet" href="{%static "blog/post-detail.css" %}" /> 
+{% endblock %} 
+{% block content %}
+<section id="summary">
+	<h2>Post TItle</h2>
+	<article>
+		<img src="{% static "blog/images/ChicagoFireworks.jpg" %}" alt="Post TItle" />
+		<address>By Randy Zeleznak</address>
+		<div>Last updated on <time> June 28th </time></div>
+	</article>
+</section>
+
+<main>
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dolorum magni
+		aut consequuntur, eveniet debitis ducimus quasi veniam inventore at
+		asperiores ad porro modi optio totam eum iusto aliquid. Doloremque!
+	</p>
+</
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dolorum magni
+		aut consequuntur, eveniet debitis ducimus quasi veniam inventore at
+		asperiores ad porro modi optio totam eum iusto aliquid. Doloremque!
+	</p>
+
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dolorum magni
+		aut consequuntur, eveniet debitis ducimus quasi veniam inventore at
+		asperiores ad porro modi optio totam eum iusto aliquid. Doloremque!
+	</p>
+</main>
+
+{% endblock %}

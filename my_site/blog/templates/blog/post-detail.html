@@ -8,32 +8,16 @@
 {% endblock %} 
 {% block content %}
 <section id="summary">
-	<h2>Post TItle</h2>
+	<h2>{{ post.title }}</h2>
 	<article>
-		<img src="{% static "blog/images/ChicagoFireworks.jpg" %}" alt="Post TItle" />
-		<address>By Randy Zeleznak</address>
-		<div>Last updated on <time> June 28th </time></div>
+		<img src="{% static "blog/images/"|add:post.image %}" alt="post.title" />
+		<address>{{ post.author }}</address>
+		<div>Last updated on <time> {{ post.date|date:"d M Y" }} </time></div>
 	</article>
 </section>
 
 <main>
-	<p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dolorum magni
-		aut consequuntur, eveniet debitis ducimus quasi veniam inventore at
-		asperiores ad porro modi optio totam eum iusto aliquid. Doloremque!
-	</p>
-</
-	<p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dolorum magni
-		aut consequuntur, eveniet debitis ducimus quasi veniam inventore at
-		asperiores ad porro modi optio totam eum iusto aliquid. Doloremque!
-	</p>
-
-	<p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dolorum magni
-		aut consequuntur, eveniet debitis ducimus quasi veniam inventore at
-		asperiores ad porro modi optio totam eum iusto aliquid. Doloremque!
-	</p>
+	{{ post.content|linebreaks }}
 </main>
 
 {% endblock %}
